@@ -1,90 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="../src/styles.css">
-    <!-- Adicionar Font Awesome CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="../src/styles.css">
+  <!-- Adicionar Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
 <body>
-    <!-- Navbar -->
-    <nav class="navbar">
-        <a href="#" class="logo">My Portfolio</a>
-        <div class="nav-links">
-            <a href="#about">About</a>
-            <a href="#resume">Resume</a>
-            <a href="#projects">Projects</a>
-        </div>
-        <div class="hamburger" onclick="toggleMobileMenu()">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-        <div class="mobile-nav" id="mobileMenu">
-            <a href="#about" onclick="closeMobileMenu()">About</a>
-            <a href="#resume" onclick="closeMobileMenu()">Resume</a>
-            <a href="#projects" onclick="closeMobileMenu()">Projects</a>
-        </div>
-    </nav>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="#" class="logo">My Portfolio</a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#resume">Resume</a>
+      <a href="#projects">Projects</a>
+    </div>
+    <div class="hamburger" aria-label="Toggle mobile menu">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="mobile-nav" id="mobileMenu">
+      <a href="#about" class="mobile-nav-link">About</a>
+      <a href="#resume" class="mobile-nav-link">Resume</a>
+      <a href="#projects" class="mobile-nav-link">Projects</a>
+    </div>
+  </nav>
 
-    <!-- Header -->
-    <header>
-      <h1>David Ferreira - Programmer</h1>
-      <img src="./img/Foto de cv.png" alt="David Ferreira" class="profile-photo">
-      <p>Hello👋🏻, I'm David! I'm new to programming and I'm a computer technician🖥️.</p>
-      <div class="contact-icons">
-          <!-- Ícones de E-mail, LinkedIn e GitHub -->
-          <a href="mailto:madara_extreme.offers@outlook.com" title="Email"><i class="fas fa-envelope"></i></a>
-          <a href="https://www.linkedin.com/in/david-ferreira2000/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-          <a href="https://github.com/madarafer123" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-      </div>
+  <!-- Header -->
+  <header>
+    <h1>David Ferreira - Programmer</h1>
+    <img src="./img/Foto de cv.png" alt="David Ferreira" class="profile-photo">
+    <p>Hello👋🏻, I'm David! I'm new to programming and I'm a computer technician🖥️.</p>
+    <div class="contact-icons">
+      <a href="mailto:madara_extreme.offers@outlook.com" title="Email"><i class="fas fa-envelope"></i></a>
+      <a href="https://www.linkedin.com/in/david-ferreira2000/" target="_blank" title="LinkedIn"><i
+          class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/madarafer123" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+    </div>
   </header>
-  
 
-    <!-- About Section -->
-    <section id="about" class="section">
-        <div class="container">
-            <h2>About</h2>
-            <p>I am a dedicated Gameplay Programmer who works closely with game designers and artists to create innovative gameplay features in Unity and Unreal Engine.</p>
+  <!-- About Section -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2>About</h2>
+      <p>I am a dedicated Gameplay Programmer who works closely with game designers and artists to create innovative
+        gameplay features in Unity and Unreal Engine.</p>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="section">
+    <div class="container">
+      <h2>Skills</h2>
+      <ul class="skills-list">
+        <li>Programming Languages: Python, JavaScript, C#</li>
+        <li>Game Engines: Unity, Unreal Engine</li>
+        <li>Web Development: HTML, CSS, JavaScript, React</li>
+        <li>Database Management: MySQL, Firebase</li>
+        <li>Version Control: Git, GitHub</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Resume Section -->
+  <section id="resume" class="section">
+    <div class="container">
+      <h2>Resume</h2>
+      <p>Here is a summary of my professional experience and skills.</p>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="section">
+    <div class="container">
+      <h2>Projects</h2>
+      <div class="projects-list">
+        <div class="project">
+          <img src="path/to/project1.jpg" alt="Project 1">
+          <h3 class="project-title">Gulp: A Gas Station Simulator</h3>
+          <p class="project-description">A point-and-click game where you manage a gas station in adverse conditions.
+          </p>
         </div>
-    </section>
-
-    <!-- Resume Section -->
-    <section id="resume" class="section">
-        <div class="container">
-            <h2>Resume</h2>
-            <p>Here is a summary of my professional experience and skills.</p>
-            <!-- Content for Resume -->
+        <div class="project">
+          <img src="path/to/project2.jpg" alt="Project 2">
+          <h3 class="project-title">Portal Gun: Recreation</h3>
+          <p class="project-description">An FPS that explores the portal concept through reverse engineering.</p>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="section">
-        <div class="container">
-            <h2>Projects</h2>
-            <div class="projects-list">
-                <div class="project">
-                    <img src="path/to/project1.jpg" alt="Project 1">
-                    <h3 class="project-title">Gulp: A Gas Station Simulator</h3>
-                    <p class="project-description">A point-and-click game where you manage a gas station in adverse conditions.</p>
-                </div>
-                <div class="project">
-                    <img src="path/to/project2.jpg" alt="Project 2">
-                    <h3 class="project-title">Portal Gun: Recreation</h3>
-                    <p class="project-description">An FPS that explores the portal concept through reverse engineering.</p>
-                </div>
-                <!-- Add more projects as needed -->
-            </div>
-        </div>
-    </section>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 David Ferreira. All rights reserved.</p>
+  </footer>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 David Ferreira. All rights reserved.</p>
-    </footer>
-    <!-- JavaScript -->
-    <script src="script.js"></script>
+  <!-- JavaScript -->
+  <script src="./src/script.js"></script> <!-- O script agora é carregado corretamente no final -->
 </body>
+
 </html>

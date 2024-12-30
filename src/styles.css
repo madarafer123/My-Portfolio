@@ -1,6 +1,6 @@
 /* General Styles */
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   background-color: #0d1117;
   color: #c9d1d9;
   margin: 0;
@@ -56,8 +56,10 @@ body {
   width: 25px;
   height: 3px;
   background-color: #c9d1d9;
+  transition: transform 0.3s ease-in-out;
 }
 
+/* Mobile Navigation Menu */
 .navbar .mobile-nav {
   display: none;
   flex-direction: column;
@@ -69,8 +71,14 @@ body {
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   padding: 10px;
+  transition: transform 0.3s ease-in-out;
 }
 
+.navbar .mobile-nav.active {
+  display: flex;
+}
+
+/* Mobile Links */
 .navbar .mobile-nav a {
   text-decoration: none;
   color: #c9d1d9;
@@ -83,21 +91,99 @@ body {
   color: #58a6ff;
 }
 
+/* Hamburger Animation */
+.navbar .hamburger.open div:nth-child(1) {
+  transform: rotate(45deg);
+}
+
+.navbar .hamburger.open div:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar .hamburger.open div:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+/* Responsive Design for Mobile */
 @media screen and (max-width: 768px) {
+
+  /* Hide the main navigation links on small screens */
   .navbar .nav-links {
-      display: none;
+    display: none;
   }
 
+  /* Show hamburger icon on small screens */
   .navbar .hamburger {
-      display: flex;
+    display: flex;
   }
 
+  /* Show mobile navigation menu when active */
   .navbar .mobile-nav.active {
-      display: flex;
+    display: flex;
+  }
+
+  /* Reduce font size for header */
+  header h1 {
+    font-size: 2rem;
+  }
+
+  /* Reduce font size for section titles */
+  .section h2 {
+    font-size: 1.8rem;
+  }
+
+  /* Adjust project card padding */
+  .project {
+    padding: 15px;
+  }
+
+  /* Reduce project card title size */
+  .project-title {
+    font-size: 1.2rem;
+  }
+
+  /* Reduce project card description size */
+  .project-description {
+    font-size: 0.9rem;
+  }
+
+  /* Adjust contact icon size */
+  .contact-icons a {
+    font-size: 1.5rem;
   }
 }
 
-/* Header Styles */
+/* Further Adjustment for Small Screens */
+@media screen and (max-width: 480px) {
+
+  /* Header padding */
+  header {
+    padding: 20px;
+  }
+
+  /* Single column layout for projects on smaller screens */
+  .projects-list {
+    grid-template-columns: 1fr;
+  }
+
+  /* Footer font size */
+  footer {
+    font-size: 0.8rem;
+  }
+}
+
+/* Profile Photo */
+.profile-photo {
+  width: 200px;
+  height: 250px;
+  border-radius: 50%;
+  margin: 15px auto;
+  display: block;
+  border: 3px solid #58a6ff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Header Styling */
 header {
   text-align: center;
   padding: 30px 20px;
@@ -126,36 +212,21 @@ header p {
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
-/* Cor para o ícone de E-mail */
-.contact-icons a[href^="mailto:"] {
-  color: #ffffff; /* Cor azul para o e-mail */
-}
-
-/* Cor para o ícone do LinkedIn */
-.contact-icons a[href*="linkedin.com"] {
-  color: #005e91; /* Cor oficial do LinkedIn */
-}
-
-/* Cor para o ícone do GitHub */
-.contact-icons a[href*="github.com"] {
-  color: #211F1F; /* Cor preta do GitHub */
-}
-
-/* Hover Effects */
+/* Hover Effects for Contact Icons */
 .contact-icons a:hover {
   transform: scale(1.2);
 }
 
 .contact-icons a[href^="mailto:"]:hover {
-  color: #005c8e; /* Cor mais escura de azul para o hover do E-mail */
+  color: #005c8e;
 }
 
 .contact-icons a[href*="linkedin.com"]:hover {
-  color: #0073b1; /* Cor mais escura de azul para o hover do LinkedIn */
+  color: #0073b1;
 }
 
 .contact-icons a[href*="github.com"]:hover {
-  color: #000000; /* Cor mais escura de preto para o hover do GitHub */
+  color: #000000;
 }
 
 /* Container Styling */
@@ -176,30 +247,6 @@ header p {
   color: #58a6ff;
   border-bottom: 2px solid #30363d;
   padding-bottom: 5px;
-}
-
-/* Skills, Experience, Education */
-.skills-list,
-.experience-list,
-.education-list {
-  list-style: none;
-  padding: 0;
-}
-
-.skills-list li,
-.experience-item,
-.education-list li {
-  margin-bottom: 15px;
-  background: #161b22;
-  padding: 10px 15px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.experience-item h3 {
-  font-size: 1.4rem;
-  margin-bottom: 5px;
-  color: #c9d1d9;
 }
 
 /* Projects Section */
@@ -267,59 +314,34 @@ footer a:hover {
   color: #1f6feb;
 }
 
-/* Responsive Styling */
-@media screen and (max-width: 768px) {
-  header h1 {
-      font-size: 2rem;
-  }
-
-  .section h2 {
-      font-size: 1.8rem;
-  }
-
-  .project {
-      padding: 15px;
-  }
-
-  .project-title {
-      font-size: 1.2rem;
-  }
-
-  .project-description {
-      font-size: 0.9rem;
-  }
-
-  .contact-icons a {
-      font-size: 1.5rem;
-  }
+/* Skills Section */
+#skills {
+  background-color: #0d1117;
+  /* Muda a cor de fundo para um tom mais escuro */
+  padding: 40px 20px;
 }
 
-@media screen and (max-width: 480px) {
-  header {
-      padding: 20px;
-  }
-
-  .projects-list {
-      grid-template-columns: 1fr;
-  }
-
-  .skills-list li,
-  .experience-item,
-  .education-list li {
-      padding: 10px;
-  }
-
-  footer {
-      font-size: 0.8rem;
-  }
+#skills h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #58a6ff;
+  border-bottom: 2px solid #30363d;
+  padding-bottom: 5px;
 }
 
-.profile-photo {
-  width: 200px;
-  height: 250px;
-  border-radius: 50%;
-  margin: 15px auto;
-  display: block;
-  border: 3px solid #58a6ff;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+.skills-list {
+  list-style: none;
+  padding: 0;
+}
+
+.skills-list li {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  color: #c9d1d9;
+  padding: 10px 0;
+  border-bottom: 1px solid #30363d;
+}
+
+.skills-list li:hover {
+  color: #58a6ff;
 }
