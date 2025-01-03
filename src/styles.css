@@ -315,33 +315,40 @@ footer a:hover {
 }
 
 /* Skills Section */
-#skills {
-  background-color: #0d1117;
-  /* Muda a cor de fundo para um tom mais escuro */
-  padding: 40px 20px;
-}
-
-#skills h2 {
-  font-size: 2rem;
+.skill {
   margin-bottom: 20px;
-  color: #58a6ff;
-  border-bottom: 2px solid #30363d;
-  padding-bottom: 5px;
 }
 
-.skills-list {
-  list-style: none;
-  padding: 0;
-}
-
-.skills-list li {
-  margin-bottom: 10px;
+.skill span {
+  display: block;
   font-size: 1.1rem;
   color: #c9d1d9;
-  padding: 10px 0;
-  border-bottom: 1px solid #30363d;
+  margin-bottom: 5px;
 }
 
-.skills-list li:hover {
-  color: #58a6ff;
+.progress {
+  background-color: #30363d;
+  border-radius: 5px;
+  height: 20px;
+  width: 100%;
+  overflow: hidden;
+  position: relative; /* Para posicionar o texto dentro da barra */
 }
+
+.progress-bar {
+  background-color: #58a6ff;
+  height: 100%;
+  position: relative;
+  transition: width 1s ease-in-out;
+}
+
+.progress-bar::after {
+  content: attr(data-percent); /* Exibir o valor da porcentagem */
+  position: absolute;
+  right: 5px; /* Espaço da margem direita */
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff; /* Cor do texto */
+  font-size: 0.9rem;
+}
+

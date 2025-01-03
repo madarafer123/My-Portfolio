@@ -1,5 +1,13 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Certificando-se de que o script só será executado após o carregamento completo do DOM
+    // Ativar animação das barras de progresso
+    const progressBars = document.querySelectorAll('.progress-bar');
+    progressBars.forEach(bar => {
+        const width = bar.style.width; // Obtém a largura definida no HTML
+        bar.style.width = '0'; // Reseta para 0 para animação
+        setTimeout(() => {
+            bar.style.width = width; // Define a largura original com animação
+        }, 100); // Tempo de espera para ativar a transição
+    });
 
     // Função para alternar o menu
     function toggleMobileMenu() {
@@ -16,11 +24,9 @@ document.addEventListener('DOMContentLoaded', function () {
     // Seleciona o botão hambúrguer
     const hamburger = document.querySelector('.hamburger');
 
-    // Verifica se o botão hambúrguer existe antes de adicionar o evento de clique
+    // Adiciona o evento de clique ao botão hambúrguer
     if (hamburger) {
         hamburger.addEventListener('click', toggleMobileMenu);
-    } else {
-        console.error("Hamburger menu element not found");
     }
 
     // Seleciona todos os links de navegação móvel
@@ -30,5 +36,4 @@ document.addEventListener('DOMContentLoaded', function () {
     mobileLinks.forEach(link => {
         link.addEventListener('click', closeMobileMenu);
     });
-
 });
