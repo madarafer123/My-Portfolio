@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projetos de Criação de Aplicações - Portfolio</title>
+  <link rel="stylesheet" href="./src/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">My Portfolio</a>
+    <div class="nav-links">
+      <a href="index.html#about">About</a>
+      <a href="index.html#resume">Resume</a>
+      <a href="projects.html">Projects</a>
+    </div>
+    <div class="hamburger" aria-label="Toggle mobile menu">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="mobile-nav" id="mobileMenu">
+      <a href="index.html#about" class="mobile-nav-link">About</a>
+      <a href="index.html#resume" class="mobile-nav-link">Resume</a>
+      <a href="projects.html" class="mobile-nav-link">Projects</a>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header>
+    <h1>Projetos de Criação de Aplicações</h1>
+    <p>Aqui estão algumas aplicações que desenvolvi.</p>
+  </header>
+
+  <!-- Projects Section -->
+  <section class="section">
+    <div class="container">
+      <h2>Minhas Aplicações</h2>
+      <div class="projects-list">
+        <!-- Exemplo de Aplicação -->
+        <div class="project">
+          <img src="./img/app-example.png" alt="App Example">
+          <h3 class="project-title">Gestor de Tarefas</h3>
+          <p class="project-description">
+            Uma aplicação simples para organizar tarefas do dia a dia. Permite adicionar, editar e remover tarefas com interface intuitiva.
+          </p>
+        </div>
+
+        <!-- (Se tiver mais apps, é só duplicar esse bloco abaixo) -->
+        <!--
+        <div class="project">
+          <img src="./img/teu-app.png" alt="Outro App">
+          <h3 class="project-title">Nome da Aplicação</h3>
+          <p class="project-description">
+            Pequena descrição da aplicação.
+          </p>
+        </div>
+        -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 David Ferreira. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="./src/script.js"></script>
+</body>
+</html>

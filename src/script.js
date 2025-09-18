@@ -1,39 +1,79 @@
-document.addEventListener('DOMContentLoaded', function () {
-    // Ativar animação das barras de progresso
-    const progressBars = document.querySelectorAll('.progress-bar');
-    progressBars.forEach(bar => {
-        const width = bar.style.width; // Obtém a largura definida no HTML
-        bar.style.width = '0'; // Reseta para 0 para animação
-        setTimeout(() => {
-            bar.style.width = width; // Define a largura original com animação
-        }, 100); // Tempo de espera para ativar a transição
+// ===========================
+// HAMBURGER MENU
+// ===========================
+document.addEventListener("DOMContentLoaded", () => {
+  const hamburger = document.querySelector(".hamburger");
+  const mobileMenu = document.getElementById("mobileMenu");
+
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener("click", () => {
+      hamburger.classList.toggle("open");
+      mobileMenu.classList.toggle("active");
     });
 
-    // Função para alternar o menu
-    function toggleMobileMenu() {
-        const menu = document.getElementById('mobileMenu');
-        menu.classList.toggle('active'); // Alternar a classe 'active' para mostrar/ocultar o menu
-    }
-
-    // Função para fechar o menu
-    function closeMobileMenu() {
-        const menu = document.getElementById('mobileMenu');
-        menu.classList.remove('active'); // Remover a classe 'active' para fechar o menu
-    }
-
-    // Seleciona o botão hambúrguer
-    const hamburger = document.querySelector('.hamburger');
-
-    // Adiciona o evento de clique ao botão hambúrguer
-    if (hamburger) {
-        hamburger.addEventListener('click', toggleMobileMenu);
-    }
-
-    // Seleciona todos os links de navegação móvel
-    const mobileLinks = document.querySelectorAll('.mobile-nav-link');
-
-    // Adiciona o evento de clique para fechar o menu ao clicar nos links
+    // Fechar menu ao clicar em um link
+    const mobileLinks = mobileMenu.querySelectorAll("a");
     mobileLinks.forEach(link => {
-        link.addEventListener('click', closeMobileMenu);
+      link.addEventListener("click", () => {
+        hamburger.classList.remove("open");
+        mobileMenu.classList.remove("active");
+      });
     });
+  }
+});
+
+// ===========================
+// FILTRO DE PROJETOS (se quiser usar botões no futuro)
+// ===========================
+document.addEventListener("DOMContentLoaded", () => {
+  const filterButtons = document.querySelectorAll(".filter-btn");
+  const projects = document.querySelectorAll(".project");
+
+  if (filterButtons.length > 0) {
+    filterButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        filterButtons.forEach(btn => btn.classList.remove("active"));
+        button.classList.add("active");
+
+        const category = button.getAttribute("data-category");
+
+        projects.forEach(project => {
+          if (category === "all" || project.getAttribute("data-category") === category) {
+            project.style.display = "block";
+          } else {
+            project.style.display = "none";
+          }
+        });
+      });
+    });
+  }
+});
+
+// ===========================
+// ANIMAÇÃO DAS SKILLS (progress bars)
+// ===========================
+document.addEventListener("DOMContentLoaded", () => {
+  const progressBars = document.querySelectorAll(".progress-bar");
+
+  function animateBars() {
+    progressBars.forEach(bar => {
+      const percent = bar.getAttribute("data-percent");
+      bar.style.width = percent;
+    });
+  }
+
+  // Ativa a animação quando a seção de skills entrar na tela
+  const skillsSection = document.getElementById("skills");
+  if (skillsSection) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateBars();
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.3 });
+
+    observer.observe(skillsSection);
+  }
 });
